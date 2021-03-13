@@ -1,0 +1,567 @@
+*{
+	margin: 0; /*margines zewnętrzny wyzerowany*/
+	padding: 0; /*margines wewnętrzny wyzerowany*/
+	box-sizing: border-box; /*włąściwość powiązana z marginesem wewnętrznym, nie zwiększa wielkości obiektu przy używaniu paddingu*/
+}
+
+body{
+	background: url(../images/slider/bg.jpg) no-repeat top center;
+	/* tło obrazek bez powtórzeń u góry na środku*/
+	font-family: 'Open Sans', sans-serif;
+}
+
+body.zielony{
+	background: lime;
+}
+
+.center{
+	margin: 0 auto; /*margines zewnętrzny: środkujący element blokowy*/
+	max-width: 1152px; /*maksymalna szerokość 1152 px*/
+	padding: 0 30px;
+}
+
+.flexBlock{
+	display: flex; /*umożliwia stosowanie elastycznego układu strony - obiekt jest blokowy, jego dzieci są liniowe*/
+	justify-content: space-between; /*rozmieszczenie w POZIOMIE w równych odległośćiach od krawędzi*/
+	align-items: center; /*rozmieszczenie PIONOWE na środku*/
+}
+
+a{
+	text-decoration: none; /*dekoracja tekstu (podkreślenie linku): brak*/
+}
+
+ul{
+	list-style: none; /*styl listy - generowanie znaków listy*/
+}
+
+a, img, strong, .transitionEl, :before, :after{/*selektory (znaczniki klasy)*/
+	-webkit-transition: all 200ms linear;
+	-moz-transition: all 200ms linear;
+	-ms-transition: all 200ms linear;
+	-o-transition: all 200ms linear;
+	transition: all 200ms linear; /*opóźnienie efektu*/
+}
+
+.headerBox{
+	padding: 66px 0 54px;
+}
+
+.headerBox p{
+	color: #a1a1a1;
+	font-size: 18px;
+	text-transform: uppercase; /*duże litery*/
+}
+
+.headerBox h3{
+	color: #1a1a1a;
+	font: 800 45px Open Sans;
+	text-transform: uppercase;
+	margin-top: -12px;
+}
+
+.buttonLink{
+	background: #de1a54;
+	width: 228px;
+	margin: 0 auto;
+	color: #fff;
+	height: 48px;
+	border-bottom: 2px solid #ad0d3c;
+	padding: 0 22px;
+}
+
+.buttonLink p{
+	font: 300 11px Open Sans;
+	text-align: left;
+}
+
+.buttonLink p strong{
+	display: block;
+	font-size: 20px;
+	margin-top:-5px;
+}
+
+.buttonLink .break{
+	height: 32px;
+	min-width: 1px;
+	background: #ad0d3c;
+}
+
+.buttonLink a{
+	color: #fff;
+	font-size: 15px;
+}
+
+/*linetop - header*/
+
+body > header .lineTop{
+	background: rgba(31,31,31,0.9); /*tło przezroczyste - litera A*/
+}
+
+body > header .lineTop .center{
+	height: 63px; /*wysokość na 63 piksele*/
+}
+	
+body > header .lineTop .icon{
+	width: 43px;
+	height: 43px;
+	background: #181818 url(../images/icons/lock.png) no-repeat center; /*tło*/
+	border: 1px solid #292929; /*obramowanie z każdej strony, 1px grubość, solid - typ, kolor*/
+	margin-right: 12px;
+}
+	
+body > header .lineTop a{
+	font-size: 15px;
+	color: #fff;
+}
+
+body > header .lineTop .user a:hover{
+	color: yellow;
+}
+	
+body > header .lineTop strong{
+	color: #de1a54;
+}
+
+body > header .lineTop a strong:hover{
+	color: yellow;
+}
+
+body > header .lineTop .break{
+	color: #7a7a7a;
+	font-size: 15px;
+	margin: 0 3px;
+}
+	
+body > header .lineTop ul li img{
+	margin-right: 11px;
+}
+	
+body > header .lineTop li + li{
+	margin-left: 44px;
+}
+	
+/*linebottom - header*/
+
+body > header .lineBottom nav{
+	flex: auto;
+}
+	
+body > header .lineBottom .break{
+	margin: 0 35px;
+	min-width: 1px;
+	height: 21px;
+	background-color: #e5e5e5;
+}
+	
+body > header .lineBottom nav a{
+	font-size: 15px;
+	color: #fff;
+	text-transform: lowercase;
+}
+
+body > header .lineBottom nav a:hover{
+	color: orange;
+}
+	
+body > header .lineBottom .social{
+	margin-left: 38px;
+}
+	
+body > header .lineBottom .social li + li{
+	margin-left: 24px;
+}
+
+/*search - section*/
+
+body > section .searchbox{
+	height: 449px;
+	flex-direction: column;
+	justify-content: center;
+}
+
+body > section .searchbox form{
+	width: 100%;
+	max-width: 510px;
+	border: 2px solid #c8c8c8;
+	background: #fff;
+}
+
+body > section .searchbox input{
+	flex: auto;
+	padding: 0 27px;
+	height: 74px;
+	font: 17px Open Sans;
+	border: none;
+	outline: none;
+}
+
+body > section .searchbox button{
+	height: 100%;
+	width: 94px;
+	background: #fff url(../images/icons/search.png) no-repeat center;
+	font-size: 0px;
+	border: none;
+	cursor: pointer;
+}
+
+body > section .searchbox div{
+	width: 100%;
+	max-width: 510px;
+	justify-content: flex-end;
+	padding: 15px 27px 0 0;
+}
+
+body > section .searchbox a{
+	color: #d1d2d5;
+	font-size: 13px;
+}
+
+body > section .searchbox a:before{
+	content: url(../images/icons/gear.png);
+	margin-right: 8px;
+	line-height: 0;
+}
+
+/*offer section*/
+
+body > section .offer .list{
+	margin: -15px;
+	flex-wrap: wrap; /*załamanie we flexie - powoduje przerzucenie dziecka do nowej linii*/
+}
+
+body > section .offer .item{
+	flex: auto; /*autodopasowanie do szerokości*/
+	margin: 15px;
+	width: 320px;
+	text-align: center;
+}
+
+body > section .offer .image{
+	height: 163px;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+}
+
+body > section .offer .image h3{
+	font: 800 16px Open Sans;
+	color: #fff;
+}
+
+body > section .offer .image h2{
+	font: 300 26px Open Sans;
+	color: #fbd800;
+}
+
+body > section .offer .image a{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 0;
+}
+
+body > section .offer .item .promotion{
+	background: #fbd800;
+	width: 132px;
+	height: 32px;
+	position: relative;
+	justify-content: center;
+	margin: -16px auto 0px;
+	color: #041822;
+}
+
+body > section .offer .item > p{
+	color: #767676;
+	font: 300 15px Open Sans;
+	margin: 23px 0;
+	line-height: 28px;
+}
+
+/*last minute sekcja*/
+
+body > section .lastminute{
+	background: url(../images/lastminute/bg.jpg) no-repeat center / cover;
+	margin-top: 66px;
+	padding-bottom: 66px;
+}
+
+body > section .lastminute .list{
+	margin: -15px;
+	flex-wrap: wrap;
+}
+
+body > section .lastminute .item{
+	background: #110e20;
+	margin: 15px;
+	width: 500px;
+	flex: auto;
+	padding: 23px;
+}
+
+body > section .lastminute .item ul{
+	flex-wrap: wrap;
+}
+
+body > section .lastminute .item .image{
+	height: 320px;
+	min-width: 220px;
+	margin-right: 18px;
+	position: relative;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	padding: 16px;
+}
+
+body > section .lastminute .item .image a{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 0;
+}
+
+body > section .lastminute .item .image h3{
+	background: #ffd200;
+	padding: 7px 10px;
+	min-width: 84px;
+	color: #110e20;
+	font: 800 15px Open Sans;
+}
+
+body > section .lastminute .item .image h2{
+	background: #110e20;
+	width: 100%;
+	font: 400 18px Open Sans;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 12px 10px;
+}
+
+body > section .lastminute .item .info .text{
+	color: #9a9a9a;
+	font-size: 15px;
+	line-height: 23px;
+}
+
+body > section .lastminute .info > .break{
+	height: 1px;
+	background: #252042;
+	margin: 15px 0;
+	display: block;
+}
+
+body > section .lastminute ul p{
+	font-size: 12px;
+	color: #9a9a9a;
+}
+
+body > section .lastminute ul strong{
+	display: block;
+	font-size: 13px;
+	color: #fff;
+}
+
+body > section .lastminute ul{
+	margin: -5px -5px 15px;
+	flex-wrap: wrap;
+}
+
+body > section .lastminute li{
+	flex: auto;
+	justify-content: flex-start;
+	width: 90px;
+	margin: 5px;
+}
+
+body > section .lastminute li:before{
+	content: url(../images/lastminute/airStart.png);
+	line-height: 0;
+	margin-right: 11px;
+}
+
+body > section .lastminute .przylot:before{
+	content: url(../images/lastminute/aireEnd.png);
+}
+
+body > section .lastminute .ocena:before{
+	content: url(../images/lastminute/star.png);
+}
+
+body > section .lastminute .hotel:before{
+	content: url(../images/lastminute/bed.png);
+}
+
+/*footer*/
+
+body > footer .top{
+	justify-content: center;
+	background: #110e20;
+	height: 290px;
+	color: #5a5478;
+	font-size: 13px;
+	text-align: center;
+	line-height: 26px;
+}
+
+body > footer .top .center{
+	max-width: 550px;
+}
+
+body > footer .bottom{
+	color: #524f65;
+	font-size: 13px;
+	text-align: center;
+	padding: 37px 30px;
+	background: #0b0917;
+}
+
+/*mobile menu - header*/
+
+body > header nav .mobile{
+	display: none;
+	text-transform: uppercase !important;
+	align-items: center;
+	height: 40px;
+}
+
+body > header nav .mobile span,
+body > header nav .mobile span:before,
+body > header nav .mobile span:after{
+	width: 35px;
+	height: 2px;
+	background: #fff;
+	margin-left: 15px;
+	content: "";
+	display: block;
+}
+
+body > header nav .mobile span:before,
+body > header nav .mobile span:after{
+	position: absolute;
+	margin: -10px 0 0 0;
+}
+
+body > header nav .mobile span:after{
+	margin: 10px 0 0 0;
+}
+
+body > header nav.active .mobile span:before{
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	margin: 0;
+	background: orange;
+}
+
+body > header nav.active .mobile span:after{
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	margin: 0;
+	background: orange;
+}
+
+body > header nav.active .mobile span{
+	background: transparent;
+}
+
+/******************/
+/******************/
+/******rwd*********/
+
+@media all and (max-width:1000px){
+	body > header .lineBottom nav ul{
+		display: none;
+		position: absolute;
+		background: rgb(0 0 0 / 0.69);
+		margin-top: 10px;
+		left: 10%;
+		right: 10%;
+		padding: 30px 15px;
+	}
+	
+	body > header .lineBottom nav ul li{
+		margin: 20px 0;
+	}
+	
+	body > header .lineBottom nav ul a{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	body > header .lineBottom nav.active ul{
+		display: block;
+	}
+	
+	body > header nav .mobile{
+		display: inline-flex;
+	}
+}
+
+@media all and (max-width:760px){	
+	body > header .lineTop li + li{
+		display: none;
+	}
+}
+
+@media all and (max-width:590px){
+	body > header .lineBottom .social{
+		display:none;
+	}
+}
+
+@media all and (max-width:480px){	
+	body > header .lineTop ul{
+		display: none;
+	}
+	
+	body > header .lineTop .user{
+		flex: auto;
+	}
+}
+
+@media all and (max-width:430px){
+	body > header nav .mobile{
+		font-size: 0 !important;
+	}
+	
+	body > header nav .mobile span{
+		margin: 0;
+	}
+}
+
+@media all and (max-width:370px){
+	body > header .lineBottom .logo img{
+		max-width: 120px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
